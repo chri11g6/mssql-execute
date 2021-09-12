@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "mssql-execute": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
