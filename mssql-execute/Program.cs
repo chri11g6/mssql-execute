@@ -29,10 +29,14 @@ namespace mssql_execute {
         }
 
         private static void TestHostName() {
-            IPAddress[] addr = Dns.GetHostAddresses(serverurl);
-            string ip = addr[addr.Length - 1].ToString();
+            try {
+                IPAddress[] addr = Dns.GetHostAddresses(serverurl);
+                string ip = addr[addr.Length - 1].ToString();
 
-            Console.WriteLine($"[DNS] {serverurl} ---> {ip}");
+                Console.WriteLine($"[DNS] {serverurl} ---> {ip}");
+            } catch (Exception e) {
+                Console.WriteLine("[DNS] Could not run DNS check");
+            }
         }
 
         private static string ReadSqlFile() {
