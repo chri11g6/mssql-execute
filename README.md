@@ -2,11 +2,15 @@
 [![Docker Pull](https://img.shields.io/docker/pulls/chri11g6/mssql-execute.svg)](https://hub.docker.com/r/chri11g6/mssql-execute)
 [![Docker Stars](https://img.shields.io/docker/stars/chri11g6/mssql-execute.svg?maxAge=2592000)](https://hub.docker.com/r/chri11g6/mssql-execute)
 
-This docker image is make as a Job or Coinjob.
-This is a small program to run a SQL script to a mssql database.
-Program is a simple to us.
+This docker image is made as a Job or Coinjob, and is easy to use. It is a small program that runs a SQL script on a mssql database.
 
-Paste your SQL script in docker volume `./execute.sql:/app/execute.sql` and then enter environment to connection to database.
+Insert your envoriment arguments in either the Docker Command or Docker-compose, where -v "./execute.sql:/app/execute.sql" or
+
+```yaml
+volumes:
+    - './execute.sql:/app/execute.sql'
+```
+is the path to your SQL script.
 
 ## Environment
 
