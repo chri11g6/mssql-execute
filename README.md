@@ -33,7 +33,7 @@ docker run -v "./execute.sql:/app/execute.sql" -e USERNAME=SA -e PASSWORD=<YourS
 ```yaml
 version: '3'
 services: 
-    MsSQL:
+    MsSQLexecute:
         image: chri11g6/mssql-execute:v1
 
         environment:
