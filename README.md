@@ -14,13 +14,14 @@ is the path to your SQL script.
 
 ## Environment
 
-|             | Description              |
-|-------------|--------------------------|
-| `USERNAME`  | Username to database     |
-| `PASSWORD`  | Password to database     |
-| `SERVERURL` | Url or Ip address        |
-| `PORT`      | Port nummber to database |
-| `DATABASE`  | What database name?      |
+|             | Description                      | Default |
+|-------------|----------------------------------|---------|
+| `USERNAME`  | Username to database             |         |
+| `PASSWORD`  | Password to database             |         |
+| `SERVERURL` | Url or Ip address                |         |
+| `PORT`      | Port nummber to database         | 1443    |
+| `DATABASE`  | What database name?              |         |
+| `DELAY`     | Delay to execute SQL script (ms) | 0       |
 
 ## Docker command
 
