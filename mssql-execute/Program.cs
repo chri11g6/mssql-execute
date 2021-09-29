@@ -4,6 +4,7 @@ using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.IO;
 using System.Net;
+using System.Threading;
 
 namespace mssql_execute {
     class Program {
@@ -12,11 +13,16 @@ namespace mssql_execute {
         private static readonly string serverurl = Environment.GetEnvironmentVariable("SERVERURL");
         private static readonly string port = Environment.GetEnvironmentVariable("PORT");
         private static readonly string database = Environment.GetEnvironmentVariable("DATABASE");
+        private static readonly string delay = Environment.GetEnvironmentVariable("DELAY");
 
         private static SqlConnection connection;
 
         static void Main(string[] arg) {
             TestHostName();
+
+            Console.WriteLine($"Delay --> {delay}ms");
+            Thread.Sleep(Int32.Parse(delay));
+
             OpenSqlConnection();
 
             string sqlCmd = ReadSqlFile();
@@ -34,7 +40,7 @@ namespace mssql_execute {
                 string ip = addr[addr.Length - 1].ToString();
 
                 Console.WriteLine($"[DNS] {serverurl} ---> {ip}");
-            } catch (Exception e) {
+            } catch {
                 Console.WriteLine("[DNS] Could not run DNS check");
             }
         }

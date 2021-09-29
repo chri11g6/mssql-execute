@@ -17,4 +17,6 @@ RUN dotnet publish "mssql-execute.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV PORT=1433
+ENV DELAY=0
 ENTRYPOINT ["dotnet", "mssql-execute.dll"]
